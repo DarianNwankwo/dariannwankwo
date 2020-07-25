@@ -3,14 +3,16 @@ import styled from "styled-components";
 
 
 const StyledCard = styled.div`
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  // box-shadow: 0 4px 8px 0 rgba(255, 165, 0, 0.2);
   transition: 0.3s;
   width: 23%;
   height: 500px;
   border-radius: 5px;
+  background-color: #fffcf9;
 
   &:hover {
-    box-shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0 rgba(255, 165, 0, 0.5);
   }
 `;
 

@@ -14,7 +14,8 @@ html, body {
 body {
     /* For some reason, my browser adds a default 8px margin. Force to zero */
     overflow: hidden;
-    background-color: #FFFCF9;
+    background-color: #F3FFB6;
+    background-color: #fffcf9;
     font-family: "Montserrat", sans-serif;
     margin: 0;
     /* Body is about 25px, in margin. away from the html element. Not sure why, but since we added
