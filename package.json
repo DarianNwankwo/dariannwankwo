@@ -14,6 +14,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@artsy/fresnel": "^1.2.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "@svgr/webpack": "^5.4.0",

@@ -33,6 +33,17 @@ const NavigationLink = styled(Link)`
   letter-spacing: .5px;
 `
 
+const AlertStyleDiv = styled.div`
+  background-color: orange;
+  border-radius: 40px;
+  width: 120px;
+  box-shadow: 0px 1px 5px #999;
+  height: 35px;
+  transform: translate(-15%, 50%);
+  position: absolute;
+  z-index: -1;
+`
+
 const SelfSpan = styled.span`
   color: #3c3b3b;
 `
@@ -47,26 +58,23 @@ const DarianSpan = styled.span`
 */
 function BuildNavigationLinks(navItemData) {
   const activeStyle = { textDecoration: "underline" };
-  const alertStyle = {
-    backgroundColor: "orange",
-    borderRadius: "40px",
-    width: "120px",
-    boxShadow: "0px 1px 5px #999",
-    height: "35px",
-    transform: `translate(-15%, 50%)`,
-    position: "absolute",
-    zIndex: "-1"
-  }
 
-  return navItemData.pageData.map((page, ndx) => (
+  const navLinks = navItemData.pageData.map((page, ndx) => {
+    let div;
+    if (page.style) { div = <AlertStyleDiv />; }
+    else div = <div></div>;
+
     <NavigationLink
       to={page.slug}
       activeStyle={ page.activeStyle ? activeStyle : {} }
     >
-      <div style={ page.style ? alertStyle : {} }></div>
+      { div }
       <h3 style={{ fontWeight: "400", textAlign: "center" }}>{page.name}</h3>
     </NavigationLink>
-  ));
+
+  });
+
+  return navLinks;
 }
 
 
