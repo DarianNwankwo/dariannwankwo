@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
 
 
 const StyledCard = styled.div`
@@ -17,33 +18,45 @@ const StyledCard = styled.div`
 `;
 
 const Container = styled.div`
-  padding: 2px 16px;
+  // padding: 2px 16px;
   overflow-wrap: break-word;
 `;
+
+const StyledLink = styled(Link)`
+  width: 23%;
+  text-decoration: none;
+  color: inherit;
+`
 
 const svgStyle = {
   width: "50%",
   margin: "0 auto",
   display: "block",
-  transform: "translateY(50%)",
+  transform: "translateY(100%)",
 };
 
 const textStyle = {
-  marginTop: "50%",
+  marginTop: "90%",
   textAlign: "center",
   fontSize: "2.5em",
   fontWeight: "200"
 };
 
 
-function Card({svg, text}) {
+/**
+ * A card component that leverages Gatsby's link api for generating clickable cards to 
+ * direct to different locations on the web app.
+ */
+function Card({svg, text, link}) {
   return (
-    <StyledCard>
-      <img src={svg} style={svgStyle} />
-      <Container>
-        <h3 style={textStyle}>{text}</h3>
-      </Container>
-    </StyledCard>
+    <StyledLink to={link}>
+      <StyledCard>
+        <img src={svg} style={svgStyle} />
+        <Container>
+          <h3 style={textStyle}>{text}</h3>
+        </Container>
+      </StyledCard>
+    </StyledLink>
   )
 }
 

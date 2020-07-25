@@ -6,6 +6,7 @@ import Card from "../Card";
 import CodingSvg from "../../static/coding.svg";
 import PencilSvg from "../../static/pencil.svg";
 import HumanResourcesSvg from "../../static/human-resources.svg";
+import { MediaContextProvider, Media } from "../../Media";
 
 
 /**
@@ -46,36 +47,37 @@ const Separator = styled.hr`
  * HomePage functional component. Combines several styled components to generate the
  * home page.
  */
-const CardWidthStyle = {
-  width: "23%",
-  textDecoration: "none",
-  color: "inherit"
-}
-
 function HomePage() {
   const cards = [
     {svg: CodingSvg, text: "Build.", link: "projects"},
     {svg: PencilSvg, text: "Think.", link: "blog"},
-    {svg: HumanResourcesSvg, text: "Pay Me.", link: "hire_me"}
+    {svg: HumanResourcesSvg, text: "Hire Me.", link: "hire_me"}
   ].map(c => (
-    <Link to={c.link} style={CardWidthStyle}><Card svg={c.svg} text={c.text} /></Link>
+    <Card svg={c.svg} text={c.text} link={c.link} />
   ));
 
   return (
-    <div style={offsetMargin}>
-      <CenteredText>
-        <StyledHeader>Darian Nwankwo</StyledHeader>
-        <Separator />
-        <Description>
-          forgive my tactlessness, i'm much better at maths. <br />
-          pending: phd student @CornellCS 🙇🏾‍♂️
-        </Description>
-      </CenteredText>
-      <Container>
-        { cards }
-      </Container>
-    </div>
-  )
+    <MediaContextProvider>
+      <Media greaterThan="md">
+        <div style={offsetMargin}>
+          <CenteredText>
+            <StyledHeader>Darian Nwankwo</StyledHeader>
+            <Separator />
+            <Description>
+              forgive my tactlessness, i'm much better at maths. <br />
+              pending: phd student <a href="https://www.cs.cornell.edu/~don/">@CornellCS 🙇🏾‍♂️</a>
+            </Description>
+          </CenteredText>
+          <Container>
+            { cards }
+          </Container>
+        </div>
+      </Media>
+      {/* Single Handheld Device View */}
+      {/* <Media lessThan="lg">
+      </Media> */}
+    </MediaContextProvider>
+  );
 }
 
 

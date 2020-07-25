@@ -3,10 +3,10 @@ import { createMedia } from "@artsy/fresnel";
 
 const QueryBreakpoints = createMedia({
   breakpoints: {
-    sm: 576,
+    sm: 0,
     md: 768,
-    lg: 992,
-    xl: 1200
+    lg: 1024,
+    xl: 1192
   },
 });
 
