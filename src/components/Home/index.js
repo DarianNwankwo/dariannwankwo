@@ -1,5 +1,6 @@
 import React from  "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
 
 import Card from "../Card";
 import CodingSvg from "../../static/coding.svg";
@@ -45,12 +46,20 @@ const Separator = styled.hr`
  * HomePage functional component. Combines several styled components to generate the
  * home page.
  */
+const CardWidthStyle = {
+  width: "23%",
+  textDecoration: "none",
+  color: "inherit"
+}
+
 function HomePage() {
   const cards = [
-    {svg: CodingSvg, text: "Build."},
-    {svg: PencilSvg, text: "Think."},
-    {svg: HumanResourcesSvg, text: "Pay Me."}
-  ].map(c => <Card svg={c.svg} text={c.text} /> );
+    {svg: CodingSvg, text: "Build.", link: "projects"},
+    {svg: PencilSvg, text: "Think.", link: "blog"},
+    {svg: HumanResourcesSvg, text: "Pay Me.", link: "hire_me"}
+  ].map(c => (
+    <Link to={c.link} style={CardWidthStyle}><Card svg={c.svg} text={c.text} /></Link>
+  ));
 
   return (
     <div style={offsetMargin}>

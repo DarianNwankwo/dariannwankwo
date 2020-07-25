@@ -64,14 +64,15 @@ function BuildNavigationLinks(navItemData) {
     if (page.style) { div = <AlertStyleDiv />; }
     else div = <div></div>;
 
-    <NavigationLink
-      to={page.slug}
-      activeStyle={ page.activeStyle ? activeStyle : {} }
-    >
-      { div }
-      <h3 style={{ fontWeight: "400", textAlign: "center" }}>{page.name}</h3>
-    </NavigationLink>
-
+    return (
+      <NavigationLink
+        to={page.slug}
+        activeStyle={ page.activeStyle ? activeStyle : {} }
+      >
+        { div }
+        <h3 style={{ fontWeight: "400", textAlign: "center" }}>{page.name}</h3>
+      </NavigationLink>
+    )
   });
 
   return navLinks;
