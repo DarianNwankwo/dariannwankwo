@@ -1,0 +1,25 @@
+{
+    "pageData": [
+        {
+            "name": "hire me",
+            "slug": "hire_me",
+            "style": true,
+            "activeStyle": true
+        },
+        {
+            "name": "blog",
+            "slug": "blog",
+            "activeStyle": true
+        },
+        {
+            "name": "projects",
+            "slug": "projects",
+            "activeStyle": true
+        },
+        {
+            "name": "home",
+            "slug": "/",
+            "activeStyle": true
+        }
+    ]
+}

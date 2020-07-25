@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap');
+
+html {
+    background-color: blue;
+}
+
+html, body {
+    height: 110%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 110%;
+}
+
+body {
+    /* For some reason, my browser adds a default 8px margin. Force to zero */
+    overflow: hidden;
+    background-color: #FFFCF9;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    /* Body is about 25px, in margin. away from the html element. Not sure why, but since we added
+    this negative offset to the html, we need to add a positive offset in margin to the navigation
+    bar to have a net appearance effect of 0.
+    */
+    margin-top: -25px;
+}
