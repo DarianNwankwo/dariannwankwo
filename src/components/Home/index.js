@@ -1,12 +1,10 @@
 import React from  "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
 
 import Card from "../Card";
 import CodingSvg from "../../static/coding.svg";
 import PencilSvg from "../../static/pencil.svg";
 import HumanResourcesSvg from "../../static/human-resources.svg";
-import { MediaContextProvider, Media } from "../../Media";
 
 
 /**
@@ -49,34 +47,27 @@ const Separator = styled.hr`
  */
 function HomePage() {
   const cards = [
-    {svg: CodingSvg, text: "Build.", link: "projects"},
-    {svg: PencilSvg, text: "Think.", link: "blog"},
-    {svg: HumanResourcesSvg, text: "Hire Me.", link: "hire_me"}
+    {svg: CodingSvg, text: "Build.", link: "projects", width: "23%"},
+    {svg: PencilSvg, text: "Think.", link: "blog", width: "23%"},
+    {svg: HumanResourcesSvg, text: "Hire Me.", link: "hire_me", width: "23%"}
   ].map(c => (
-    <Card svg={c.svg} text={c.text} link={c.link} />
+    <Card svg={c.svg} text={c.text} link={c.link} width={c.width} />
   ));
 
   return (
-    <MediaContextProvider>
-      <Media greaterThan="md">
-        <div style={offsetMargin}>
-          <CenteredText>
-            <StyledHeader>Darian Nwankwo</StyledHeader>
-            <Separator />
-            <Description>
-              forgive my tactlessness, i'm much better at maths. <br />
-              pending: phd student <a href="https://www.cs.cornell.edu/~don/">@CornellCS 🙇🏾‍♂️</a>
-            </Description>
-          </CenteredText>
-          <Container>
-            { cards }
-          </Container>
-        </div>
-      </Media>
-      {/* Single Handheld Device View */}
-      {/* <Media lessThan="lg">
-      </Media> */}
-    </MediaContextProvider>
+    <div style={offsetMargin}>
+      <CenteredText>
+        <StyledHeader>Darian Nwankwo</StyledHeader>
+        <Separator />
+        <Description>
+          forgive my tactlessness, i'm much better at maths. <br />
+          pending: phd student <a href="https://www.cs.cornell.edu/~don/">@CornellCS 🙇🏾‍♂️</a>
+        </Description>
+      </CenteredText>
+      <Container>
+        { cards }
+      </Container>
+    </div>
   );
 }
 

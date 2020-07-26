@@ -23,7 +23,7 @@ const Container = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-  width: 23%;
+  // width: 33%;
   text-decoration: none;
   color: inherit;
 `
@@ -47,9 +47,9 @@ const textStyle = {
  * A card component that leverages Gatsby's link api for generating clickable cards to 
  * direct to different locations on the web app.
  */
-function Card({svg, text, link}) {
+function Card({svg, text, link, width}) {
   return (
-    <StyledLink to={link}>
+    <StyledLink to={link} style={{ width: width }}>
       <StyledCard>
         <img src={svg} style={svgStyle} />
         <Container>
