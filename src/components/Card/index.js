@@ -32,7 +32,7 @@ const svgStyle = {
   width: "50%",
   margin: "0 auto",
   display: "block",
-  transform: "translateY(100%)",
+  transform: "translateY(100%)"
 };
 
 const textStyle = {

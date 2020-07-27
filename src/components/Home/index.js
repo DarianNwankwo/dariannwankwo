@@ -7,6 +7,9 @@ import PencilSvg from "../../static/pencil.svg";
 import HumanResourcesSvg from "../../static/human-resources.svg";
 
 
+// (TODO): Fix element positioning for different size cards. The text goes outside of the container, but
+// should be maintained in it.
+
 /**
  * Setup for the styled components to be strictly used by the HomePage
  */

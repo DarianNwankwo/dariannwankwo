@@ -24,7 +24,6 @@ const FixedView = styled.div`
   background: #fffcf9;
   top: 0;
   left: 0;
-  overflow: hidden;
 `
 
 const TopLeft = styled(Link)`

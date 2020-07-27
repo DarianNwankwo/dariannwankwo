@@ -34,6 +34,7 @@ const NavigationLink = styled(Link)`
 `
 
 const AlertStyleDiv = styled.div`
+  // background-color: pink;
   background-color: orange;
   border-radius: 40px;
   width: 120px;
@@ -59,18 +60,18 @@ const DarianSpan = styled.span`
 function BuildNavigationLinks(navItemData) {
   const activeStyle = { textDecoration: "underline" };
 
-  const navLinks = navItemData.pageData.map((page, ndx) => {
+  const navLinks = navItemData.pageData.map((pageLink, ndx) => {
     let div;
-    if (page.style) { div = <AlertStyleDiv />; }
+    if (pageLink.style) { div = <AlertStyleDiv />; }
     else div = <div></div>;
 
     return (
       <NavigationLink
-        to={page.slug}
-        activeStyle={ page.activeStyle ? activeStyle : {} }
+        to={pageLink.slug}
+        activeStyle={ pageLink.activeStyle ? activeStyle : {} }
       >
         { div }
-        <h3 style={{ fontWeight: "400", textAlign: "center" }}>{page.name}</h3>
+        <h3 style={{ fontWeight: "400", textAlign: "center" }}>{pageLink.name}</h3>
       </NavigationLink>
     )
   });
