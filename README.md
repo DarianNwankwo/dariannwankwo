@@ -9,6 +9,9 @@ Personal website built via Gatsby + React while referencing my XD mockup.
 - [ ] Implement Blog index page from the XD design
 - [ ] Leverage Gatsby's createPage API to dynamically render blog posts
 - [ ] Create the template view component for blog posts
+- [ ] Fix excess white space issue on smaller mobile views
+- [ ] Include an image of myself somewhere on the site. Might be a cause for refactoring my design
+- [ ] Add an about page!
 
 
 ## Feel Free To Steal My Design

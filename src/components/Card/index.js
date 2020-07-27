@@ -47,7 +47,8 @@ const mobileSvgStyle = {
   // border: "2px solid black",
   margin: "0 auto",
   marginTop: "calc(15%)",
-  display: "block"
+  display: "block",
+  width: "25vw"
 }
 
 const textStyle = {
@@ -70,9 +71,9 @@ const mobileTextStyle = {
  * A card component that leverages Gatsby's link api for generating clickable cards to 
  * direct to different locations on the web app.
  */
-function Card({svg, text, link, width}) {
+function Card({svg, text, link, width, height}) {
   return (
-    <StyledLink to={link} style={{ width: width }}>
+    <StyledLink to={link} style={{ width: width, height: height }}>
       <Media greaterThan="md">
         <StyledCard>
           <img src={svg} style={svgStyle} />
