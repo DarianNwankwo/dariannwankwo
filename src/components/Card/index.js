@@ -12,7 +12,7 @@ const StyledCard = styled.div`
   height: 500px;
   border-radius: 5px;
   background-color: #fffcf9;
-  border: 2px solid red;
+  // border: 2px solid red;
   overflow: auto;
 
   &:hover {
@@ -24,6 +24,10 @@ const Container = styled.div`
   // padding: 2px 16px;
   overflow-wrap: break-word;
 `;
+
+const MobileContainer = styled.div`
+  position: relative;
+`
 
 const StyledLink = styled(Link)`
   // width: 33%;
@@ -39,6 +43,9 @@ const svgStyle = {
 };
 
 const mobileSvgStyle = {
+  // border: "2px solid black",
+  margin: "15% auto",
+  display: "block"
 }
 
 const textStyle = {
@@ -46,11 +53,16 @@ const textStyle = {
   textAlign: "center",
   fontSize: "2.5em",
   fontWeight: "200",
-  border: "2px solid pink"
+  // border: "2px solid pink"
 };
 
 const mobileTextStyle = {
-
+  textAlign: "center",
+  fontSize: "2.5em",
+  fontWeight: "200",
+  // border: "2px solid black",
+  marginTop: "calc(20% - 5vh)",
+  display: "block"
 }
 
 
@@ -72,9 +84,9 @@ function Card({svg, text, link, width}) {
       <Media lessThan="lg">
         <StyledCard>
           <img src={svg} style={mobileSvgStyle} />
-          <Container>
+          <MobileContainer>
             <h3 style={mobileTextStyle}>{text}</h3>
-          </Container>
+          </MobileContainer>
         </StyledCard>
       </Media>
     </StyledLink>
