@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { Media } from "../../Media";
 
 
 const StyledCard = styled.div`
@@ -11,6 +12,8 @@ const StyledCard = styled.div`
   height: 500px;
   border-radius: 5px;
   background-color: #fffcf9;
+  border: 2px solid red;
+  overflow: auto;
 
   &:hover {
     box-shadow: 0px 8px 16px 0 rgba(255, 165, 0, 0.5);
@@ -29,18 +32,26 @@ const StyledLink = styled(Link)`
 `
 
 const svgStyle = {
-  width: "50%",
+  width: "7vw",
   margin: "0 auto",
   display: "block",
-  transform: "translateY(100%)"
+  transform: "translateY(100%)",
 };
+
+const mobileSvgStyle = {
+}
 
 const textStyle = {
   marginTop: "90%",
   textAlign: "center",
   fontSize: "2.5em",
-  fontWeight: "200"
+  fontWeight: "200",
+  border: "2px solid pink"
 };
+
+const mobileTextStyle = {
+
+}
 
 
 /**
@@ -50,12 +61,22 @@ const textStyle = {
 function Card({svg, text, link, width}) {
   return (
     <StyledLink to={link} style={{ width: width }}>
-      <StyledCard>
-        <img src={svg} style={svgStyle} />
-        <Container>
-          <h3 style={textStyle}>{text}</h3>
-        </Container>
-      </StyledCard>
+      <Media greaterThan="md">
+        <StyledCard>
+          <img src={svg} style={svgStyle} />
+          <Container>
+            <h3 style={textStyle}>{text}</h3>
+          </Container>
+        </StyledCard>
+      </Media>
+      <Media lessThan="lg">
+        <StyledCard>
+          <img src={svg} style={mobileSvgStyle} />
+          <Container>
+            <h3 style={mobileTextStyle}>{text}</h3>
+          </Container>
+        </StyledCard>
+      </Media>
     </StyledLink>
   )
 }

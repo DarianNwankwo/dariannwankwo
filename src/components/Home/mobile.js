@@ -44,8 +44,9 @@ function MobileHomePage() {
     {svg: CodingSvg, text: "Build.", link: "projects"},
     {svg: PencilSvg, text: "Think.", link: "blog"},
     {svg: HumanResourcesSvg, text: "Hire Me.", link: "hire_me"}
-  ].map(c => (
-    <div style={{marginBottom: "10%"}}><Card svg={c.svg} text={c.text} link={c.link} width={c.width} /></div>
+  ].map((c, ndx) => (
+    <div key={ndx} style={{marginBottom: "10%"}}><Card svg={c.svg} text={c.text} link={c.link} /></div>
+    // <Card svg={c.svg} text={c.text} link={c.link} />
   ));
 
   return (

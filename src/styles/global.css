@@ -9,7 +9,7 @@ html, body {
 
 body {
     /* For some reason, my browser adds a default 8px margin. Force to zero */
-    overflow-x: hidden;
+    overflow: hidden;
     background-color: #F3FFB6;
     background-color: #fffcf9;
     font-family: "Montserrat", sans-serif;
@@ -19,4 +19,10 @@ body {
     bar to have a net appearance effect of 0.
     */
     margin-top: -25px;
+}
+
+@media only screen and (max-width: 1024px) {
+    body {
+        overflow: auto;
+    }
 }
