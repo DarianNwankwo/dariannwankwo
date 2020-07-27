@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { Media } from "../../Media";
+import { camelCase } from "jquery";
 
 
 const StyledCard = styled.div`
@@ -26,7 +27,7 @@ const Container = styled.div`
 `;
 
 const MobileContainer = styled.div`
-  position: relative;
+  overflow-wrap: break-word;
 `
 
 const StyledLink = styled(Link)`
@@ -44,7 +45,8 @@ const svgStyle = {
 
 const mobileSvgStyle = {
   // border: "2px solid black",
-  margin: "15% auto",
+  margin: "0 auto",
+  marginTop: "calc(15%)",
   display: "block"
 }
 
@@ -61,10 +63,8 @@ const mobileTextStyle = {
   fontSize: "2.5em",
   fontWeight: "200",
   // border: "2px solid black",
-  marginTop: "calc(20% - 5vh)",
-  display: "block"
+  // marginTop: "calc(5vh)",
 }
-
 
 /**
  * A card component that leverages Gatsby's link api for generating clickable cards to 
