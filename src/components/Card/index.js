@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { Media } from "../../Media";
-import { camelCase } from "jquery";
 
 
 const StyledCard = styled.div`

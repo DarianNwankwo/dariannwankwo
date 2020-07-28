@@ -1,23 +1,27 @@
 import React from "react";
-import NavigationBar from "../components/NavigationBar";
+
+import MobileLayout from "../Components/Layout/mobile.js";
+import NavigationBar from "../Components/NavigationBar";
+import MobileNavigationBar from "../Components/NavigationBar/mobile.js";
+import ProjectsPage from "../Components/Projects";
+import MobileProjectsPage from "../Components/Projects/mobile.js";
+import { MediaContextProvider, Media } from "../Media";
+import { OffsetContainer } from "../Components/Layout/offset.js";
 
 
-const centerStyle = {
-  textAlign: "center",
-  paddingTop: "20%"
-}
-
-function Projects() {
-  return (
-    <div>
+export default () => (
+  <MediaContextProvider>
+    <Media greaterThan="md">
       <NavigationBar />
-      <div style={centerStyle}>
-        <h1>Software...I BUILD THAT!!!</h1>
-        <p>Still working on it...</p>
-      </div>
-    </div>
-  )
-}
-
-
-export default Projects;
+      <OffsetContainer>
+        <ProjectsPage />
+      </OffsetContainer>
+    </Media>
+    <Media lessThan="lg">
+      <MobileLayout>
+        <MobileNavigationBar />
+        <MobileProjectsPage />
+      </MobileLayout>
+    </Media>
+  </MediaContextProvider>
+);

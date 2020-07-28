@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby";
 
 import { useSiteMetadata } from "../../utils";
 import navItemData from "../../assets/navItemData.json";

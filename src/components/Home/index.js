@@ -13,8 +13,6 @@ import HumanResourcesSvg from "../../static/human-resources.svg";
 /**
  * Setup for the styled components to be strictly used by the HomePage
  */
-const offsetMargin = { paddingTop: "100px" };
-
 const CenteredText = styled.div`
   text-align: center;
 `
@@ -58,7 +56,7 @@ function HomePage() {
   ));
 
   return (
-    <div style={offsetMargin}>
+    <div>
       <CenteredText>
         <StyledHeader>Darian Nwankwo</StyledHeader>
         <Separator />

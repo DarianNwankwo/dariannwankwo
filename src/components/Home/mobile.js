@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import Card from "../Card";
 import DesertSvg from "../../static/desert.svg";
-import PointingDownSvg from "../../static/pointing_down.svg";
 import CodingSvg from "../../static/coding.svg";
 import PencilSvg from "../../static/pencil.svg";
 import HumanResourcesSvg from "../../static/human-resources.svg";
@@ -65,9 +64,7 @@ function MobileHomePage() {
           </HeaderDescription>
         </CenteredContainer>
         <ImageBanner src={DesertSvg} />
-        {/* <PointingDownGraphic src={PointingDownSvg} /> */}
       </HeaderPaddingContainer>
-      {/* Render card components! */}
       <CardContainer>
         { cards }
       </CardContainer>
