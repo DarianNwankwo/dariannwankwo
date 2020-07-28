@@ -14,7 +14,8 @@ Personal website built via Gatsby + React while referencing my XD mockup.
 - [ ] Include an image of myself somewhere on the site. Might be a cause for refactoring my design
 - [x] Add an about page!
 - [ ] Refactor card component into a modular piece to be used throughout
-  * The card view appears a lot and can be a bit more flexible in its implementation
+  * The card view appears a lot and can be a bit more flexible in its implementation\
+- [ ] Add Gatsby's plugin for react helmet
 
 
 ## Feel Free To Steal My Design
