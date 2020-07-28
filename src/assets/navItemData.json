@@ -2,18 +2,23 @@
     "pageData": [
         {
             "name": "hire me",
-            "slug": "hire_me",
+            "slug": "/hire_me",
             "style": true,
             "activeStyle": true
         },
         {
+            "name": "about",
+            "slug": "/about",
+            "activeStyle": true
+        },
+        {
             "name": "blog",
-            "slug": "blog",
+            "slug": "/blog",
             "activeStyle": true
         },
         {
             "name": "projects",
-            "slug": "projects",
+            "slug": "/projects",
             "activeStyle": true
         },
         {

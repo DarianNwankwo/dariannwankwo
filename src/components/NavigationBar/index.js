@@ -17,6 +17,7 @@ const NavigationContainer = styled.div`
   box-shadow: 0px 1px 10px #999;
   font-size: 1.1em;
   margin-top: 25px;
+  z-index: 1;
 `
 
 const NavigationHeader = styled.div`
