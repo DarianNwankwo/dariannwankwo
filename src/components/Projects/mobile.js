@@ -4,7 +4,7 @@ import React, { Component } from "react";
 class MobileProjectsPage extends Component {
   constructor() {
     super();
-  }
+  }A
 
   render() {
     return (
