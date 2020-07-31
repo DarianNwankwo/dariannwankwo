@@ -1,23 +1,27 @@
 import React from "react";
+import styled from "styled-components";
+
+import MobileLayout from "../Components/Layout/mobile.js";
 import NavigationBar from "../Components/NavigationBar";
-
-
-const centerStyle = {
-  textAlign: "center",
-  paddingTop: "20%"
-}
+import MobileNavigationBar from "../Components/NavigationBar/mobile.js";
+import HireMePage from "../Components/HireMe";
+import { MediaContextProvider, Media } from "../Media"
 
 
 function HireMe() {
   return (
-    <div>
-      <NavigationBar />
-      <div style={centerStyle}>
-        <h1>If you got that work, I need that work!</h1>
-        <p>Still working on it...</p>
-      </div>
-    </div>
-  )
+    <MediaContextProvider>
+      <Media greaterThan="md">
+        <NavigationBar />
+      </Media>
+      <Media lessThan="lg">
+        <MobileLayout>
+          <MobileNavigationBar />
+        </MobileLayout>
+      </Media>
+      <HireMePage />
+    </MediaContextProvider>
+  );
 }
 
 
