@@ -12,6 +12,7 @@ const NavigationIcon = styled.div`
   top: 3%;
   right: 5%;
   color: #EFA650;
+  z-index: 2;
 `
 
 const FixedView = styled.div`
@@ -64,6 +65,7 @@ const NavigationClose = styled.img`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 `
 
 
@@ -106,7 +108,7 @@ class MobileNavigationBar extends Component {
           style={ this.state.isActive ? hideNav : {} }
           onClick={this.handleClick}
         />
-        { this.state.isActive ? activeNavigationView(this.handleClick) : <div></div>}
+        { this.state.isActive ? activeNavigationView() : <div></div>}
         {
           this.state.isActive ?
           <NavigationClose src={PlusSvg} onClick={this.handleClick}></NavigationClose> : <div></div>

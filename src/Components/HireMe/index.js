@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import { OffsetContainer } from "../Layout/offset";
 import "./styles.css";
 
 
@@ -10,13 +11,14 @@ const ParentContainer = styled.div`
   place-items: center;
   height: 100%;
   width: 100%;
-  z-index: -1;
 `
 
 const ChildContainer = styled.div`
   color: #EFA650;
   font-size: 2em;
   text-align: center;
+  z-index: 1;
+  // border: 2px solid red;
 `
 
 function HireMePage() {
