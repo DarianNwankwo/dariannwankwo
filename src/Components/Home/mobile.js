@@ -47,7 +47,7 @@ const CardContainer = styled.div`
 function MobileHomePage() {
   const cards = [
     {svg: CodingSvg, text: "Build.", link: "projects"},
-    {svg: PencilSvg, text: "Think.", link: "blog"},
+    {svg: PencilSvg, text: "Think.", link: "http://blog.dariannwankwo.com"},
     {svg: HumanResourcesSvg, text: "Hire Me.", link: "hire_me"}
   ].map((c, ndx) => (
     <div key={ndx} style={{marginBottom: "10%"}}><Card svg={c.svg} text={c.text} link={c.link} /></div>
