@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
+import { Link } from "gatsby";
 
 import ArrowSvg from "../../static/arrow.svg";
 import DropdownSvg from "../../static/dropdown.svg";
 import PlaceholderImage from "../../static/placeholder.png";
 import Card from "../Card";
+import { projectsData } from "./projectsData";
 
 
 const ProjectsContainer = styled.div`
@@ -49,7 +51,7 @@ const RightArrowContainer = styled.div`
   animation: ${RightPulsate} 700ms linear infinite;
 `
 
-const ImageContainer = styled.div`
+const ImageContainer = styled(Link)`
   flex-grow: 5.5;
   flex-shrink: 1;
   // border: 2px solid pink;
@@ -77,7 +79,7 @@ const DropDownMenu = styled.img`
   margin: 0 auto;
   display: block;
   width: 50%;
-  transition: .1s;
+  transition: .5s;
 
   &:hover {
     width: 55%;
@@ -125,43 +127,64 @@ const SpacedDiv = styled.div`
 class ProjectsPage extends Component {
   constructor() {
     super();
-    this.handleArrowClick = this.handleArrowClick.bind(this);
+    this.state = {
+      projects: projectsData.projects,
+      activeProject: projectsData.projects[0],
+      index: 0,
+      dropdownOpen: false
+    };
   }
   
-  handleArrowClick() {
-    alert("Clicked...")
+  handleArrowClick(increment) {
+    let n = this.state.projects.length;
+    let direction = increment ? 1 : -1;
+    let index = (this.state.index + direction % n + n) % n;
+    
+    this.setState(prevState => ({
+      ...prevState,
+      index,
+      activeProject: prevState.projects[index]
+    }));
+    // debugger;
+    // alert("Clicked...")
+  }
+
+  handleDropdownClick() {
+    this.setState(prevState => ({
+      ...prevState,
+      dropdownOpen: !prevState.dropdownOpen
+    }));
   }
 
   render() {
     return (
       <ProjectsContainer>
-        <LeftArrowContainer onClick={this.handleArrowClick}>
-          <img src={ArrowSvg} width="75%" />
+        <LeftArrowContainer onClick={this.handleArrowClick.bind(this, false)}>
+          <img src={ArrowSvg} width="75%" alt="left arrow" />
         </LeftArrowContainer>
-        <ImageContainer>
-          <Image src={PlaceholderImage} />
+        <ImageContainer to={ this.state.activeProject.url } >
+          {/* <Image src={PlaceholderImage} /> */}
+          <Image src={ this.state.activeProject.image } />
         </ImageContainer>
-        <ShowAllContainer>
-          <DropDownMenu src={DropdownSvg} />
-        </ShowAllContainer>
+        {/* <ShowAllContainer>
+          <DropDownMenu src={DropdownSvg} onClick={this.handleDropdownClick.bind(this)} />
+        </ShowAllContainer> */}
         <ProjectDescriptionContainer>
           <ProjectDescription>
             <SpacedDiv>
-              <h1>Project Title</h1>
-              <p>
-                Project description is right below the project title. It shows this following text because
-                I do not want to use lorem ipsum.
-              </p>
-              <h1>Developer Stack</h1>
+              <h1>{ this.state.activeProject.title }</h1>
+              <p>{ this.state.activeProject.description }</p>
+              <h1>Developer Stack && Tools</h1>
               <ul>
-                <li>Python</li>
-                <li>Javascript</li>
+                { 
+                  this.state.activeProject.stack.map(tag => <li>{tag}</li>)
+                }
               </ul>
             </SpacedDiv>
           </ProjectDescription>
         </ProjectDescriptionContainer>
-        <RightArrowContainer>
-          <img src={ArrowSvg} width="75%" />
+        <RightArrowContainer onClick={this.handleArrowClick.bind(this, true)}>
+          <img src={ArrowSvg} width="75%" alt="right arrow" />
         </RightArrowContainer>
       </ProjectsContainer>
     )

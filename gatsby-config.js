@@ -24,11 +24,5 @@ module.exports = {
         path: `${__dirname}/src/markdown`,
       }
     },
-    {
-      resolve: `gatsby-source-github-api`,
-      options: {
-        url: `https://api.github.com/graphql`,
-      }
-    },
   ],
 }

@@ -51,8 +51,8 @@ function HomePage() {
     {svg: CodingSvg, text: "Build.", link: "projects", width: "23%"},
     {svg: PencilSvg, text: "Think.", link: "blog", width: "23%"},
     {svg: HumanResourcesSvg, text: "Hire Me.", link: "hire_me", width: "23%"}
-  ].map(c => (
-    <Card svg={c.svg} text={c.text} link={c.link} width={c.width} />
+  ].map((c, ndx) => (
+    <Card key={ndx} svg={c.svg} text={c.text} link={c.link} width={c.width} />
   ));
 
   return (

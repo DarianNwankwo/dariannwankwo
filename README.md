@@ -6,17 +6,16 @@ Personal website built via Gatsby + React while referencing my XD mockup.
   - Maintain the state of the mobile view through the MobileLayout component to adjust the view on different actions
 - [ ] Implement Hire Me page from the XD design
 - [x] Implement Projects page from the XD design
-  - [ ] Implement logic to query github for projects
 - [ ] Implement Blog index page from the XD design
 - [ ] Leverage Gatsby's createPage API to dynamically render blog posts
 - [x] Create the template view component for blog posts
 - [ ] Fix excess white space issue on smaller mobile views
   * Consider using flexbox here
-- [ ] Include an image of myself somewhere on the site. Might be a cause for refactoring my design
+- [x] Include an image of myself somewhere on the site. Might be a cause for refactoring my design
 - [x] Add an about page!
-- [ ] Refactor card component into a modular piece to be used throughout
+- [x] Refactor card component into a modular piece to be used throughout
   * The card view appears a lot and can be a bit more flexible in its implementation\
-- [ ] Add Gatsby's plugin for react helmet
+- [x] Add Gatsby's plugin for react helmet
 
 
 ## Feel Free To Steal My Design
