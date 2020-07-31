@@ -74,7 +74,7 @@ function activeNavigationView() {
     <FixedView>
       <TopLeft to={`/`}>home</TopLeft>
       <TopRight to={`/projects`}>projects</TopRight>
-      <BottomLeft to={`/blog`}>blog</BottomLeft>
+      <BottomLeft to={`http://blog.dariannwankwo.com`}>blog</BottomLeft>
       <BottomRight to={`/hire_me`}>hire me</BottomRight>
     </FixedView>
   );
