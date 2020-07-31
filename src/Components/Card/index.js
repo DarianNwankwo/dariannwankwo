@@ -14,7 +14,8 @@ const StyledCard = styled.div`
   border-radius: 5px;
   background-color: #fffcf9;
   // border: 2px solid red;
-  overflow: auto;
+  // overflow: auto;
+  overflow-y: hidden;
 
   &:hover {
     box-shadow: 0px 8px 16px 0 rgba(255, 165, 0, 0.5);
